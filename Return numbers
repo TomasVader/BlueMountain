@@ -1,0 +1,27 @@
+import java.util.Scanner;//导入Scanner类
+public class project_1 {
+    public static void main (String[]args){
+        //输入一个数字
+        Scanner scanner=new Scanner(System.in);//创建Scanner对象
+        System.out.println("请输入一个整数：");
+        int a=scanner.nextInt();//使用nextInt()方法读取整数
+        Boolean b=judge_Nubers(a);
+        //（维护用）输出判断结果b
+        //System.out.println(b);
+        if(b==true) {
+            System.out.println("这个数是回文数");
+        }else if(b==false) {
+            System.out.println("这个数不是回文数");
+        }
+  }//main方法的
+//定义一个方法，使输入的数字变为字符串，将其反转后与原数比较
+    public static boolean judge_Nubers(int number) {
+        String Char_Groups = String.valueOf(number);//转换成字符串
+        String Reversed = new StringBuilder(Char_Groups).reverse().toString();//反转字符串
+        //（维护用）输出两个字符串
+        /*System.out.println(Char_Groups);
+        System.out.println(Reversed);*/
+        //判断前后两个字符串是否相等
+       return Char_Groups.equals(Reversed);
+    }//Judge_Numbers方法的
+}//总的
