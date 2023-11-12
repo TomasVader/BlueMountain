@@ -1,0 +1,96 @@
+//一
+public class Main {
+    public static void main(String[]args){
+        //实例化两个子类
+        Cat my_cat=new Cat("罗小黑","male",1.5);
+        Dog my_dog=new Dog("黑","二哈","male");
+        //调用方法
+        my_cat.eat();
+        my_cat.talk();
+        my_dog.eat();
+        my_dog.talk();
+
+    } //main方法的
+
+
+
+
+
+
+}
+abstract class Animal{
+    //创建属性
+    String name;
+    String sex;
+
+    public Animal() {
+
+    }
+
+    //声明抽象方法
+    abstract void talk();
+    abstract void eat();
+    //创造构造方法
+    public Animal(String name,String sex){
+        this.name=name;
+        this.sex=sex;
+    }
+
+
+}//抽象Animal类
+
+//二
+//创建子类Dog
+public class Dog extends Animal {
+    //创建特有属性
+    String color;
+    //实现父类中的抽象方法
+    public void talk(){
+        System.out.println("the Dog is barking");
+    }
+    public void eat(){
+        System.out.println("the Dog can eat");
+    }
+    //创建构造函数
+    public Dog (String color,String name,String sex) {
+        this.color = color;
+        this.name = name;
+        this.sex = sex;
+    }
+}
+
+//三
+public class Cat extends Animal {
+    //封装属性
+    double weight;
+
+
+
+    //复写抽象方法
+    void talk(){
+        System.out.println("this cat is crying");
+    }
+    void eat(){
+        System.out.println("this cat can eat");
+    }
+    //创建构造方法
+    public Cat (String name,String sex,double weight){
+        this.weight=weight;
+        this.name=name;
+        this.sex=sex;
+    }
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
